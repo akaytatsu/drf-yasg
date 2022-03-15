@@ -45,7 +45,7 @@ class EndpointEnumerator(_EndpointEnumerator):
             if version and version not in namespace.split(':'):
                 return False
 
-        if getattr(callback.cls, 'swagger_schema', object()) is None:
+        if getattr(callback.cls, 'swagger_schema', object()) is not True:
             return False
 
         return True
